@@ -1,0 +1,18 @@
+
+# OPEN_JDK_VERSION=8-jdk-alpine docker-compose -f docker-compose.build.yml build --no-cache
+# docker-compose -f docker-compose.build.yml push
+version: '3.5'
+services:
+  java-builder:
+    image: tjmt/java:builder
+    build:
+      context: .
+      dockerfile: Dockerfile      
+      args: 
+        TimeZone: "America/Cuiaba" #OPCIONAL: default = America/Cuiaba
+        IMAGE_JAVA_VERSION: ${OPEN_JDK_VERSION} # VERSÃO DA IMAGEM DO COMPILADOR JAVA
+        MAVEN_REPO: "" # ${MVN_REPO} OPICIONAL: default:  maven2
+        GRADLEW_REPO: "" # ${GRDLW_REPO} OPICIONAL: default:  maven2
+        HTTP_PROXY: "" #OPCIONAL
+        HTTP_PROXY_USER: "" #OPCIONAL
+        HTTP_PROXY_PASSWORD: "" #OPCIONAL
