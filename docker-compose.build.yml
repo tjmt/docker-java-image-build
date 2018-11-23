@@ -11,8 +11,6 @@ services:
       args: 
         TimeZone: "America/Cuiaba" #OPCIONAL: default = America/Cuiaba
         IMAGE_JAVA_VERSION: ${OPEN_JDK_VERSION} # VERSÃO DA IMAGEM DO COMPILADOR JAVA
-        MAVEN_REPO: "" # ${MVN_REPO} OPICIONAL: default:  maven2
-        GRADLEW_REPO: "" # ${GRDLW_REPO} OPICIONAL: default:  maven2
         HTTP_PROXY: "" #OPCIONAL
         HTTP_PROXY_USER: "" #OPCIONAL
         HTTP_PROXY_PASSWORD: "" #OPCIONAL
